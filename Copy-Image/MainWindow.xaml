@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Copy_Image"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="Copy-Image" Height="250" Width="300" Loaded="Window_Loaded" Icon="Image.ico">
+    <Grid Background="Black" >
+        <Image Source="Assets/Image_256x.png" Opacity="0.15" Margin="20"></Image>
+        <TextBlock Foreground="White" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25" FontFamily="Source Code Pro" FontWeight="Bold">Copy-Image</TextBlock>
+        <Button Name="buttonInfo" Background="Transparent"  VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,10,0" Cursor="Hand" ToolTip="Info" Click="buttonInfo_Click" BorderBrush="{x:Null}">
+            <Image Source="Assets/StatusHelp_grey_32xLG.png" Height="20" Width="20"></Image>
+        </Button>
+        <StackPanel x:Name="stackInstall" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="buttonInstall" Margin="0,10,0,10" Click="buttonInstall_Click" Content="Install" Width="60" Height="25"/>
+            <Button x:Name="buttonRemove" Margin="0,10,0,10" Click="buttonRemove_Click" Content="Remove" Width="60" Height="25"/>
+        </StackPanel>
     </Grid>
 </Window>

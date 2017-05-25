@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Copy-Image")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Copy images, not files, by right-clicking in Explorer.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Translucency")]
 [assembly: AssemblyProduct("Copy-Image")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright ©  2017 Translucency")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
