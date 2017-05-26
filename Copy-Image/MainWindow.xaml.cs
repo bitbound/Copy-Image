@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -72,6 +73,7 @@ namespace Copy_Image
             WPF_Auto_Update.Updater.ServiceURI = "https://translucency.info/Services/VersionCheck.cshtml?Path=/Downloads/" + WPF_Auto_Update.Updater.FileName;
             WPF_Auto_Update.Updater.UpdateTimeout = Duration.Forever;
             WPF_Auto_Update.Updater.CheckCommandLineArgs();
+            WPF_Auto_Update.Updater.CheckForUpdates(true);
         }
         private void Current_DispatcherUnhandledException(Object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
@@ -95,17 +97,22 @@ namespace Copy_Image
             MessageBox.Show(sb.ToString(), "Application Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        private void Window_Loaded(Object sender, RoutedEventArgs e)
+        private async void Window_Loaded(Object sender, RoutedEventArgs e)
         {
-            WPF_Auto_Update.Updater.CheckForUpdates(true);
             if (targetPath != null)
             {
                 this.Hide();
-                App.Current.ShutdownMode = ShutdownMode.OnLastWindowClose;
-                var win = new NotificationWindow();
-                win.Show();
                 Clipboard.SetImage(new BitmapImage(new Uri(targetPath)));
-
+                var cursor = System.Windows.Forms.Cursor.Position;
+                var tooltip = new ToolTip();
+                tooltip.Content = "Image copied to clipboard!";
+                tooltip.Placement = System.Windows.Controls.Primitives.PlacementMode.AbsolutePoint;
+                tooltip.HorizontalOffset = cursor.X - 5;
+                tooltip.VerticalOffset = cursor.Y;
+                tooltip.IsOpen = true;
+                await Task.Delay(2000);
+                tooltip.BeginAnimation(OpacityProperty, new DoubleAnimation(0, TimeSpan.FromSeconds(2)));
+                await Task.Delay(2500);
                 this.Close();
             }
             else
