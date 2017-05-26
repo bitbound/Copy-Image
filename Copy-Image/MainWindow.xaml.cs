@@ -133,7 +133,7 @@ namespace Copy_Image
             var tooltip = new ToolTip();
             tooltip.Content = "Image copied to clipboard!";
             tooltip.Placement = System.Windows.Controls.Primitives.PlacementMode.AbsolutePoint;
-            tooltip.HorizontalOffset = cursor.X - 5;
+            tooltip.HorizontalOffset = cursor.X + 5;
             tooltip.VerticalOffset = cursor.Y;
             tooltip.IsOpen = true;
             await Task.Delay(2000);
