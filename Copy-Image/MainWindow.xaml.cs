@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -68,8 +68,8 @@ namespace Copy_Image
                 }
             }
             InitializeComponent();
-            WPF_Auto_Update.Updater.RemoteFileURI = "https://translucency.info/Downloads/" + WPF_Auto_Update.Updater.FileName;
-            WPF_Auto_Update.Updater.ServiceURI = "https://translucency.info/Services/VersionCheck.cshtml?Path=/Downloads/" + WPF_Auto_Update.Updater.FileName;
+            WPF_Auto_Update.Updater.RemoteFileURI = "https://translucency.azurewebsites.net/Downloads/" + WPF_Auto_Update.Updater.FileName;
+            WPF_Auto_Update.Updater.ServiceURI = "https://translucency.azurewebsites.net/Services/VersionCheck.cshtml?Path=/Downloads/" + WPF_Auto_Update.Updater.FileName;
             WPF_Auto_Update.Updater.UpdateTimeout = Duration.Forever;
             WPF_Auto_Update.Updater.CheckCommandLineArgs();
             WPF_Auto_Update.Updater.CheckForUpdates(true);
@@ -169,7 +169,7 @@ namespace Copy_Image
 
         private void buttonRemove_Click(Object sender, RoutedEventArgs e)
         {
-            var psi = new ProcessStartInfo("cmd.exe", "/c rd \"" + Path.GetDirectoryName(installedPath) + @""" /s /q&reg.exe delete HKCR\pngfile\shell\CopyImage /f&reg.exe delete HKCR\jpegfile\shell\CopyImage /f");
+            var psi = new ProcessStartInfo("cmd.exe", "/c rd \"" + Path.GetDirectoryName(installedPath) + @""" /s /q&reg.exe delete HKCR\*\shell\CopyImage /f");
             psi.WindowStyle = ProcessWindowStyle.Hidden;
             psi.Verb = "runas";
             try
