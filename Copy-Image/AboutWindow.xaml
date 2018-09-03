@@ -14,7 +14,7 @@
         </TextBlock>
         <TextBlock Margin="0,46,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" >
             <TextBlock>Translucency (</TextBlock>
-            <Hyperlink Click="Hyperlink_Click">https://translucency.azurewebsites.net</Hyperlink>
+            <Hyperlink Click="Hyperlink_Click">https://lucency.co</Hyperlink>
             <TextBlock>)</TextBlock>
         </TextBlock>
         <Border Margin="0,67,0,35" BorderBrush="DimGray" BorderThickness="1">

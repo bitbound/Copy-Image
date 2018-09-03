@@ -68,8 +68,8 @@ namespace Copy_Image
                 }
             }
             InitializeComponent();
-            WPF_Auto_Update.Updater.RemoteFileURI = "https://translucency.azurewebsites.net/Downloads/" + WPF_Auto_Update.Updater.FileName;
-            WPF_Auto_Update.Updater.ServiceURI = "https://translucency.azurewebsites.net/Services/VersionCheck.cshtml?Path=/Downloads/" + WPF_Auto_Update.Updater.FileName;
+            WPF_Auto_Update.Updater.RemoteFileURI = "https://lucency.co/Downloads/" + WPF_Auto_Update.Updater.FileName;
+            WPF_Auto_Update.Updater.ServiceURI = "https://lucency.co/Services/VersionCheck.cshtml?Path=/Downloads/" + WPF_Auto_Update.Updater.FileName;
             WPF_Auto_Update.Updater.UpdateTimeout = Duration.Forever;
             WPF_Auto_Update.Updater.CheckCommandLineArgs();
             WPF_Auto_Update.Updater.CheckForUpdates(true);

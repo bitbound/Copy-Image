@@ -32,7 +32,7 @@ namespace Copy_Image
         }
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://translucency.azurewebsites.net");
+            System.Diagnostics.Process.Start("https://lucency.co");
         }
 
         private void buttonOK_Click(Object sender, RoutedEventArgs e)
